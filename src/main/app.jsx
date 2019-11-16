@@ -8,7 +8,7 @@ import Routes from "./routes"
 // import { Container } from './styles';
 
 export default props => (
-  <div className="container">
+  <div>
     <Menu />
     <Routes/>
   </div>
