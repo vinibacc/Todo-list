@@ -17,6 +17,7 @@ export default class todo extends Component {
     };
     this.handleAdd = this.handleAdd.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleClear = this.handleClear.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleMarkAsDone = this.handleMarkAsDone.bind(this);
@@ -41,6 +42,9 @@ export default class todo extends Component {
     const description = this.state.description;
     axios.post(URL, { description })
     .then(res => this.refresh());
+  }
+  handleClear() {
+    this.refresh()
   }
 
   handleChange(e) {
@@ -71,6 +75,7 @@ export default class todo extends Component {
           handleAdd={this.handleAdd}
           handleChange={this.handleChange}
           handleSearch={this.handleSearch}
+          handleClear={this.handleClear}
         />
         <TodoList
           list={this.state.list}
