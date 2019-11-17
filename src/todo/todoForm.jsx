@@ -1,6 +1,6 @@
 import React from "react";
-import Grid from '../template/grid'
-import IconButton from '../template/iconButton'
+import Grid from "../template/grid";
+import IconButton from "../template/iconButton";
 
 export default props => (
   <div role="form" className="todoForm">
@@ -9,10 +9,16 @@ export default props => (
         id="description"
         className="form-control"
         placeholder="Adicione uma Tarefa"
+        onChange={props.handleChange}
+        value={props.description}
       />
     </Grid>
     <Grid cols="12 3 2">
-        <IconButton style="primary" icon="plus"/>
+      <IconButton 
+        style="primary" 
+        icon="plus" 
+        onClick={props.handleAdd} 
+      />
     </Grid>
   </div>
 );
