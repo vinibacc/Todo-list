@@ -1,32 +1,15 @@
-const INITIAL_STATE = {
-  description: "ler livro",
-  list: [
-    {
-      _id: 1,
-      description: "Pagar fatura do cartão",
-      done: true
-    },
-    {
-      _id: 2,
-      description: "Reunião",
-      done: true
-    },
-    {
-      _id: 3,
-      description: "tarefa opa",
-      done: true
-    }
-  ]
-};
+const INITIAL_STATE = { description: "", list: [] };
 
 export default function TodoReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "DESCRITION_CHANGE":
       return { ...state, description: action.payload };
+    case "TODO_SEARCHED":
+      return { ...state, list: action.payload };
+    case "TODO_CLEAR":
+      return { ...state, description: "" };
 
     default:
       return state;
   }
 }
-
-export const Creators = {};
